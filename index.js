@@ -33,6 +33,11 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 var assert = require('assert');
 
+/*
+  * `config`: _Object_
+    * `timePeriod`: _Number_ _(Default: 1000)_ Time period in milliseconds.
+    * `tickInterval`: _Number_ _(Default: 1000)_ Tick inteval in milliseconds.
+*/
 var EWLR = module.exports = function EWLR(config) {
     var self = this;
 
@@ -109,8 +114,8 @@ EWLR.prototype.tick = function tick() {
 };
 
 /*
-  * `n`: _Integer_ Number of events to update with.
-  * `lost`: _Integer_ Number of lost events to update with (0 < lost <= n)
+  * `n`: _Integer_ _(Default: 1)_ Number of events to update with.
+  * `lost`: _Integer_ _(Default: 0)_ Number of lost events to update with (0 < lost <= n)
 */
 EWLR.prototype.update = function update(n, lost) {
     var self = this;

@@ -85,14 +85,14 @@ setTimeout(function () {
 
 ## Documentation
 
-  * [EWLR](#ewlr)
+  * [EWLR](#ewlr-1)
 
 ### EWLR
 
 **Public API**
 
   * [EWLR.getTime()](#ewlrgettime)
-  * [EWLR.tickIfNecessary(lastTick, tickInterval)](#ewlrtickifnecessarylasttick-tick-interval)
+  * [EWLR.tickIfNecessary(lastTick, tickInterval)](#ewlrtickifnecessarylasttick-tickinterval)
   * [new EWLR(config)](#new-ewlrconfig)
   * [ewlr.rate()](#ewlrrate)
   * [ewlr.tick()](#ewlrtick)
@@ -111,9 +111,15 @@ setTimeout(function () {
     * `lastTick`: _Number_ Time of new last tick to set in milliseconds
     * `requiredTicks`: _Number_ The number of ticks to execute to catch up.
 
+Determines if and how many ticks are necessary.
+
 ### new EWLR(config)
 
   * `config`: _Object_
+    * `timePeriod`: _Number_ _(Default: 1000)_ Time period in milliseconds.
+    * `tickInterval`: _Number_ _(Default: 1000)_ Tick inteval in milliseconds.
+
+Creates a new EWLR instance.
 
 ### ewlr.rate()
 
@@ -121,11 +127,13 @@ setTimeout(function () {
     * `rate`: _Number_ Rate of events. Rate is returned so that it can be determined if `lossRate` is meaningful. For example, if rate is 13 events per second, `lossRate` probably reflects current loss rate. However, if current rate is 2.504763981949714e-32 events per second, the loss rate (even if 20%), may not be meaningful since the tiny rate may mean that no updates have happened for a long time
     * `lossRate`: _Number_ Normalized ([0..1]) loss rate of events
 
+Returns the event rate and the normalized loss rate.
+
 ### ewlr.tick()
 
 Update the rate and loss rate estimates in accordance with time period and tick interval.
 
 ### ewlr.update([n], [lost])
 
-  * `n`: _Integer_ Number of events to update with.
-  * `lost`: _Integer_ Number of lost events to update with (0 < lost <= n)
+  * `n`: _Integer_ _(Default: 1)_ Number of events to update with.
+  * `lost`: _Integer_ _(Default: 0)_ Number of lost events to update with (0 < lost <= n)
