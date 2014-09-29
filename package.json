@@ -1,0 +1,20 @@
+{
+  "name": "ewlr",
+  "version": "0.0.0",
+  "description": "Exponentially Weighted Loss Rate.",
+  "scripts": {
+    "inject-examples": "node scripts/injectExamples.js",
+    "readme": "node examples/readme.js",
+    "test": "node scripts/test.js"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tristanls/ewlr.git"
+  },
+  "keywords": [
+    "exponentially weighted loss rate"
+  ],
+  "author": "Tristan Slominski <tristan.slominski@gmail.com>",
+  "license": "MIT"
+}
