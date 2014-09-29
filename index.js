@@ -85,9 +85,8 @@ EWLR.tickIfNecessary = function tickIfNecessary(lastTick, tickInterval) {
   * Return: _Object_
     * `rate`: _Number_ Rate of events. Rate is returned so that it can be
         determined if `lossRate` is meaningful. For example, if rate is
-        2.504763981949714e-32 events per second, the loss
-        rate (even if 20%), may not be meaningful since the tiny rate may mean
-        that no updates have happened for a long time.
+        2.504763981949714e-32, the loss rate (even if 20%), may not be meaningful
+        since the tiny rate may mean that no updates have happened for a long time.
     * `lossRate`: _Number_ Normalized ([0..1]) loss rate of events
 */
 EWLR.prototype.rate = function rate() {
